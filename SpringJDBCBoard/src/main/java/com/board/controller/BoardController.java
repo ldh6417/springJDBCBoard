@@ -13,30 +13,29 @@ import com.board.domain.Board;
 import com.board.service.BoardService;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.RequestParam;
-
-
-
 
 @Slf4j
 @Controller
 @RequestMapping("/board")
 public class BoardController {
 	
+	
+	
 	@Autowired
 	private BoardService boardService;
+	
 	
 	@GetMapping("/insertForm")
 	public String boardInsertForm(Model model) {
 		return "board/insertForm";
 	}
-	
+
 	@PostMapping("/insert")
 	public String boardInsert(Board board, Model model) {
 		log.info("insert board = " + board.toString());
 		try {
 			int count = boardService.insertBoard(board);
-			if(count > 0) {
+			if (count > 0) {
 				return "board/success";
 			}
 		} catch (Exception e) {
@@ -44,46 +43,42 @@ public class BoardController {
 		}
 		return "board/failed";
 	}
-	
+
 	@GetMapping("/boardlist")
 	public String boardList(Model model) {
 		log.info("boardlist");
-		
+
 		try {
 			List<Board> boardList = boardService.boardList();
-			
-			model.addAttribute("boardList",boardList);
-			
+
+			model.addAttribute("boardList", boardList);
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		return "board/boardList";
 	}
-	
+
 	@GetMapping("/detail")
 	public String boardDetail(Board b, Model model) {
-		log.info("boardDetail board = "+b.toString());
-		
+		log.info("boardDetail board = " + b.toString());
+
 		try {
 			Board board = boardService.selectByNo(b);
-			if(board == null) {
+			if (board == null) {
 				return "board/failed";
 			}
-			model.addAttribute("board",board);
-			
+			model.addAttribute("board", board);
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		return "board/detail";
 	}
+
 	
 	
+
 }
-
-
-
-
-
-

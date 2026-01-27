@@ -3,6 +3,7 @@ package com.board.service;
 import java.util.List;
 
 import com.board.domain.Board;
+import com.board.domain.Member;
 
 public interface BoardService {
 	
@@ -15,5 +16,6 @@ public interface BoardService {
 	public int deleteBoard(Board board) throws Exception;
 	
 	public List<Board> boardList() throws Exception;
+
 	
 }
