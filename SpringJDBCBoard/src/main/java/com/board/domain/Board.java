@@ -12,4 +12,7 @@ public class Board {
 	private String content;
 	private String writer;
 	private Date regDate;
+	//검색 필요 항목
+	private String searchType;
+	private String keyword;
 }
