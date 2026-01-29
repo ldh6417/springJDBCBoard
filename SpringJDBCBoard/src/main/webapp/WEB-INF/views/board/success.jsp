@@ -89,11 +89,11 @@
 <body>
 
 <div class="result-container">
-    <div class="icon-box">🏆</div>
+    <div class="icon-box">🏆🏆🏆🏆🏆🏆</div>
     <h2>MISSION <span style="color:var(--t1-red)">COMPLETE</span></h2>
-    <p>게시글이 성공적으로 전송되었습니다.<br>T1 팬 커뮤니티의 일원이 되신 것을 환영합니다.</p>
+    <p>${message}</p>
 
-    <a href="/board/isertForm" class="btn-list">New Board Insert</a>
+    <a href="/board/insertForm" class="btn-list">New Board Insert</a>
     <a href="/board/boardlist" class="btn-list">View Board List</a>
 
 </div>

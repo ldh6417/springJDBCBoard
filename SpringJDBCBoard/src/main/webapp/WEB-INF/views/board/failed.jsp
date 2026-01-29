@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -92,7 +91,7 @@
 <div class="result-container">
     <div class="icon-box">🏆</div>
     <h2>MISSION <span style="color:var(--t1-red)">COMPLETE</span></h2>
-    <p>게시글 전송 실패하였습니다.<br>다시 입력해 주시기 바랍니다.</p>
+    <p>${message}<br>다시 시도해 주시기 바랍니다.</p>
 
     <a href="/board/insertForm" class="btn-list">New Board Insert</a>
     <a href="/board/boardlist" class="btn-list">View Board List</a>

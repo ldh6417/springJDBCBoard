@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -172,38 +173,40 @@ textarea {
 
 	<div class="write-container">
 		<div class="header">
-			<h1>${board.writer}님의게시판 수정</h1>
+			<h1>
+				T1 COMMUNITY<br><span>${board.writer}님의 게시판 수정</span>
+			</h1>
 		</div>
 
-		<form action="/board/updateForm" method="post">
+		<form action="/board/update" method="post">
 			<div class="form-group">
-				<label for="writer">작성자 번호</label> <input type="text"
-					id="no" name="no" value="%{board.no}" readonly>
+				<label for="no">작성자 번호</label> <input type="text"
+					id="no" name="no" value="${board.no}" readonly>
 			</div>
 			<div class="form-group">
-				<label for="writer">작성자</label> <input type="text"
+				<label for="writer">작성자(Writer)</label> <input type="text"
 					id="writer" name="writer" value="${board.writer}" required>
 			</div>
 
 			<div class="form-group">
 				<label for="title">제목(Title)</label> <input type="text" id="title"
-					name="title" value="${board.title}"required>
+					name="title" value="${board.title}" required>
 			</div>
 
 			<div class="form-group">
-				<label for="content">글내용(Content)</label>
-				<textarea id="content" name="content"
-					${board.content}></textarea>
+				<label for="content">내용(Content)</label>
+				<textarea id="content" name="content">${board.content}</textarea>
 			</div>
 
 			<div class="btn-area">
 				<a href="/board/boardlist" class="btn-list">게시판 목록</a>
-				<button type="submit" class="btn btn-submit">수정 전송</button>
+				<button type="submit" class="btn btn-submit">게시판 수정</button>
 				<button type="reset" class="btn btn-reset">수정 취소</button>
 			</div>
 		</form>
 
-		<div class="bottom-deco">[ SYSTEM: READY TO TRANSMIT DATA TO JDBCBOARD ]</div>
+		<div class="bottom-deco">[ SYSTEM: READY TO TRANSMIT DATA TO
+			JDBCBOARD ]</div>
 	</div>
 
 </body>
